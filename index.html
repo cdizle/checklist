@@ -142,29 +142,11 @@
     }
   }
 </script>
-    function updateProgress() {
-      const totalItems = document.querySelectorAll('input[type="checkbox"]').length;
-      const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked').length;
-      const progress = (checkedItems / totalItems) * 100;
-      document.querySelector('.progress').style.width = `${progress}%`;
-      document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
-      // Save to localStorage
-      localStorage.setItem('checklist', JSON.stringify(checklist));
-    }
-
-    // Add custom items
-    function addCustomItem() {
-      const item = document.getElementById('customItem').value;
-      const div = document.createElement('div');
-      div.innerHTML = `<label><input type="checkbox"> ${item}</label>`;
-      document.getElementById('customList').appendChild(div);
-      document.getElementById('customItem').value = '';
-    }
-
-    // Attach event listeners to checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.addEventListener('change', updateProgress);
     });
   </script>
 </body>
+  <div class="footer" style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9em;">
+  <p>Tool created for <em>Emergency Preparedness: Surviving the First 72 Hours</em><br>
+  Recommended gear provided by <a href="https://survivalfrog.com" target="_blank" style="color: #FF6F00; text-decoration: none;">Survival Frog</a></p>
+</div>
 </html>
